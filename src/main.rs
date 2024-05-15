@@ -8,7 +8,7 @@ use axum::{
 #[derive(Template)]
 #[template(path = "test.html")]
 struct MyTemplate {
-    name: String,
+    users: Vec<String>,
 }
 
 #[tokio::main]
@@ -18,7 +18,7 @@ async fn main() {
         get(|| async {
             Html(
                 MyTemplate {
-                    name: "abc".to_string(),
+                    users: vec!["abc".to_string(), "bca".to_string(), "cde".to_string()],
                 }
                 .render()
                 .unwrap(),

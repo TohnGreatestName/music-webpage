@@ -1,5 +1,11 @@
 <center>
     <b>
-        Hi, {{ name }}!
+        Hi, friends!
+
+        <ul>
+            {% for user in users %}
+            <li>{{ user }}</li>
+            {% endfor %}
+        </ul>
     </b>
 </center>
